@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum-app
+  namespace: quantumapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: quantum-app
+  template:
+    metadata:
+      labels:
+        app: quantum-app
+    spec:
+      containers:
+      - name: quantum-container
+        image: farman1/quantum-drug-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+
+        volumeMounts:
+        - name: quantum-storage
+          mountPath: /app/data   # ✅ where your data will be available
+
+      volumes:
+      - name: quantum-storage
+        persistentVolumeClaim:
+          claimName: quantum-pvc
