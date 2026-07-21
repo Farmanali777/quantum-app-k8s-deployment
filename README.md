@@ -63,33 +63,47 @@ Namespace (quantumapp)
 
 ```bash
 kind create cluster --config kind-config.yml
+```
 
-2️⃣ Apply Namespace
+### 2️⃣ Apply Namespace
+
+```bash
 kubectl apply -f namespace.yml
+```
 
-3️⃣ Create Storage
+### 3️⃣ Create Storage
+
+```bash
 kubectl apply -f pv.yml
 kubectl apply -f pvc.yml
+```
 
-4️⃣ Deploy Application
+### 4️⃣ Deploy Application
+
+```bash
 kubectl apply -f deployment.yml
+```
 
-5️⃣ Expose Service
+### 5️⃣ Expose Service
+
+```bash
 kubectl apply -f service.yml
+```
+## ✅ Verify Deployment
 
-## Verify Deployment
-
+```bash
 kubectl get all -n quantumapp
-
 kubectl get pv
-
 kubectl get pvc -n quantumapp
-
 kubectl get svc -n quantumapp
+```
 
+Expected output:
+
+```text
 NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)
 quantum-service    NodePort   10.x.x.x        <none>        8000:30080/TCP
-
+```
 
 🌐 Access Application
 Open in browser:
