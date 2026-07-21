@@ -138,12 +138,15 @@ kubectl port-forward --address 0.0.0.0 svc/quantum-service 8000:8000 -n quantuma
 
 <img width="857" height="550" alt="image" src="https://github.com/user-attachments/assets/4520c66e-f749-4ed8-b439-9c8920e5f4bc" />
 
-📊 Features
-Multi-node Kubernetes deployment
-Load balancing across pods
-Persistent storage support
-Scalable architecture
-Clean DevOps structure
+## 📊 Features
+
+- Multi-node Kubernetes deployment using Kind
+- Docker containerization
+- NodePort service exposure
+- Load balancing across multiple pods
+- Persistent storage using Persistent Volumes (PV) and Persistent Volume Claims (PVC)
+- Scalable architecture with multiple replicas
+- Production-inspired Kubernetes deployment
 
 ## 👨‍💻 Author
 
