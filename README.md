@@ -84,7 +84,7 @@ kubectl port-forward --address 0.0.0.0 svc/quantum-service 8000:8000 -n quantuma
 
 Open in browser:
 
-http://<EC2-IP>:8000
+http://<EC2-Public-IP>:30080
 
 QUANTUM-APP
 <img width="957" height="534" alt="image" src="https://github.com/user-attachments/assets/15579b26-c78d-4452-9bae-08f843bcc2d1" />
