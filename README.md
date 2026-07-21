@@ -24,7 +24,7 @@ Namespace (quantumapp)
 ├── Deployment (2 replicas)
 │ └── Pods (running app)
 │
-├── Service ClusterIP
+├── Service NodePort
 │
 ├── Persistent Volume (PV)
 │
