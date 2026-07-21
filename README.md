@@ -105,16 +105,40 @@ NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)
 quantum-service    NodePort   10.x.x.x        <none>        8000:30080/TCP
 ```
 
-🌐 Access Application
-Open in browser:
+## 🌐 Access Application
 
+### Option 1: Access via NodePort (Recommended)
+
+After deploying the application, ensure that **TCP port 30080** is allowed in your EC2 Security Group.
+
+Open your browser:
+
+```text
 http://<EC2-Public-IP>:30080
+```
 
+---
 
-🌐 Access Application Additionally
-Using port-forward:
+### Option 2: Access via Port Forward (Alternative)
 
+If direct access to the NodePort is unavailable, you can use Kubernetes port forwarding.
+
+Run:
+
+```bash
 kubectl port-forward --address 0.0.0.0 svc/quantum-service 8000:8000 -n quantumapp
+```
+
+Then open:
+
+```text
+http://<EC2-Public-IP>:8000
+```
+
+> **Note:**
+> - The `kubectl port-forward` command must remain running while accessing the application.
+> - **NodePort** is the recommended access method for this project.
+> - **Port Forward** is mainly useful for testing, development, or troubleshooting.
 
 ## 📸 Application Screenshots
 
