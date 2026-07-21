@@ -77,14 +77,29 @@ kubectl apply -f deployment.yml
 5️⃣ Expose Service
 kubectl apply -f service.yml
 
+## Verify Deployment
+
+kubectl get all -n quantumapp
+
+kubectl get pv
+
+kubectl get pvc -n quantumapp
+
+kubectl get svc -n quantumapp
+
+NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)
+quantum-service    NodePort   10.x.x.x        <none>        8000:30080/TCP
+
+
+🌐 Access Application
+Open in browser:
+
+http://<EC2-Public-IP>:30080
+
 🌐 Access Application
 Using port-forward:
 
 kubectl port-forward --address 0.0.0.0 svc/quantum-service 8000:8000 -n quantumapp
-
-Open in browser:
-
-http://<EC2-Public-IP>:30080
 
 QUANTUM-APP
 <img width="957" height="534" alt="image" src="https://github.com/user-attachments/assets/15579b26-c78d-4452-9bae-08f843bcc2d1" />
