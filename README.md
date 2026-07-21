@@ -145,8 +145,10 @@ Persistent storage support
 Scalable architecture
 Clean DevOps structure
 
-👨‍💻 Author
-Farman Ali
+## 👨‍💻 Author
+
+**Farman Ali**
 
 DevOps | Cloud | Kubernetes
-Focused on building real-world production-level projects
+
+Focused on building real-world, production-inspired cloud-native applications using Docker and Kubernetes.
