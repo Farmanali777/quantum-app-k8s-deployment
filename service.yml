@@ -4,9 +4,10 @@ metadata:
   name: quantum-service
   namespace: quantumapp
 spec:
-  type: ClusterIP   # ✅ CHANGE
+  type: NodePort
   selector:
     app: quantum-app
   ports:
     - port: 8000
       targetPort: 8000
+      nodePort: 30080
